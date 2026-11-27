@@ -40,9 +40,10 @@ html.js .rv.show{opacity:1;translate:none;scale:none;rotate:none}
 /* 2 GRID (dinding foto miring) */
 #grid{background:#111;padding:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
 #grid .wall{position:absolute;display:grid;gap:14px;transform-origin:center;will-change:transform;
-  /* HP / tablet: 2 kolom, turun ke bawah saat scroll */
-  width:150%;height:270%;left:-25%;top:-85%;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(8,1fr);
-  transform:rotate(-8deg) translateY(-14%);animation:driftY 28s ease-in-out infinite alternate}
+  /* HP / tablet: 2 kolom x 4 baris, bergeser turun sendiri */
+  width:150%;height:190%;left:-25%;top:-45%;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,1fr);
+  transform:rotate(-8deg) translateY(-12%);animation:driftY 28s ease-in-out infinite alternate}
+#grid .wall .ph.wide{grid-column:span 2}
 #grid .wall .ph{border-radius:4px;font-size:11px;box-shadow:0 8px 22px rgba(0,0,0,.45);transform:rotate(var(--r,0deg));overflow:hidden}
 #grid .wall .ph img{width:100%;height:100%;object-fit:cover}
 #grid .wall .ph:nth-child(3n){--r:2.5deg}
@@ -50,12 +51,12 @@ html.js .rv.show{opacity:1;translate:none;scale:none;rotate:none}
 #grid .wall .ph:nth-child(4n+2){--r:1deg}
 #grid::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(10,8,14,.55),rgba(10,8,14,.85))}
 @media(min-width:900px){
-  /* DESKTOP: 2 baris memanjang, bergeser ke samping saat scroll */
-  #grid .wall{width:230%;height:150%;left:-10%;top:-25%;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(2,1fr);
-    transform:rotate(-8deg) translateX(2%);animation:driftX 32s ease-in-out infinite alternate}
+  /* DESKTOP: 4 kolom x 2 baris, bergeser ke samping sendiri */
+  #grid .wall{width:175%;height:150%;left:-12%;top:-25%;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);
+    transform:rotate(-8deg) translateX(3%);animation:driftX 32s ease-in-out infinite alternate}
 }
-@keyframes driftY{to{transform:rotate(-8deg) translateY(14%)}}
-@keyframes driftX{to{transform:rotate(-8deg) translateX(-32%)}}
+@keyframes driftY{to{transform:rotate(-8deg) translateY(12%)}}
+@keyframes driftX{to{transform:rotate(-8deg) translateX(-20%)}}
 @media(prefers-reduced-motion:reduce){#grid .wall{animation:none}}
 #grid h2{position:relative;z-index:2;font:500 clamp(34px,6.5vw,84px)/1.15 var(--serif);padding:0 20px;text-shadow:0 2px 24px rgba(0,0,0,.6)}
 #grid h2 .it{font-size:2.3em;line-height:.8;vertical-align:-.1em}
@@ -133,24 +134,15 @@ html.js .rv.show{opacity:1;translate:none;scale:none;rotate:none}
 
 <!-- ============ 2. GRID FOTO & JUDUL ============ -->
 <section id="grid">
-  <!-- Dinding foto: HP = bergeser ke bawah sendiri, desktop = bergeser ke samping sendiri. Urutan kotak bebas, jumlah tetap 16 -->
+  <!-- Dinding foto (7 foto): HP = bergeser ke bawah sendiri, desktop = bergeser ke samping sendiri. Mau tambah foto? salin satu <div class="ph">…</div> (jumlah kotak sebaiknya genap, kotak "wide" menghitung 2) -->
   <div class="wall rv zoom" style="--d:.25s">
-    <!-- MASUKKAN FOTO 2 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-17.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:50% 38%"></div>
-    <!-- MASUKKAN FOTO 3 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-04.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
-    <!-- MASUKKAN FOTO 4 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 4]</div>
-    <!-- MASUKKAN FOTO 5 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 5]</div>
-    <!-- MASUKKAN FOTO 6 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 6]</div>
-    <!-- MASUKKAN FOTO 7 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-18.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:25% 55%"></div>
-    <!-- MASUKKAN FOTO 8 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 8]</div>
-    <!-- MASUKKAN FOTO 9 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 9]</div>
-    <!-- MASUKKAN FOTO 10 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-05.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
-    <!-- MASUKKAN FOTO 11 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 11]</div>
-    <!-- MASUKKAN FOTO 12 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-19.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:25% 55%"></div>
-    <!-- MASUKKAN FOTO 13 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 13]</div>
-    <!-- MASUKKAN FOTO 14 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 14]</div>
-    <!-- MASUKKAN FOTO 15 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-20.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:30% 32%"></div>
-    <!-- MASUKKAN FOTO 16 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 16]</div>
-    <!-- MASUKKAN FOTO 17 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph">[FOTO 17]</div>
+    <!-- FOTO 1: ganti isi div ini / ganti nama file di src --><div class="ph"><img src="foto/foto-17.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:50% 38%"></div>
+    <!-- FOTO 2: ganti isi div ini / ganti nama file di src --><div class="ph"><img src="foto/foto-18.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:25% 55%"></div>
+    <!-- FOTO 3: ganti isi div ini / ganti nama file di src --><div class="ph"><img src="foto/foto-21.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:50% 40%"></div>
+    <!-- FOTO 4: ganti isi div ini / ganti nama file di src --><div class="ph"><img src="foto/foto-19.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:25% 55%"></div>
+    <!-- FOTO 5: ganti isi div ini / ganti nama file di src --><div class="ph"><img src="foto/foto-20.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:30% 32%"></div>
+    <!-- FOTO 6: ganti isi div ini / ganti nama file di src --><div class="ph"><img src="foto/foto-05.jpg" alt="" onerror="this.style.display='none'" loading="lazy" style="object-position:30% center"></div>
+    <!-- FOTO 7 (kotak lebar, cocok untuk foto landscape) --><div class="ph wide"><img src="foto/foto-04.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
   </div>
   <h2 class="rv up" style="--d:.1s">
     <span class="it">3</span> things you get<br>when you turn <span class="it">15</span>.
