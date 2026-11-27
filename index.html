@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy 15th Birthday, Rifana!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--serif:'Playfair Display',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif;--ink:#1d1b22;--paper:#fbf6ec;--rose:#e9a9b8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;overflow-x:hidden}
+section{position:relative;min-height:100vh;min-height:100svh;padding:clamp(24px,5vw,72px);overflow:hidden}
+.it{font-family:var(--serif);font-style:italic;font-weight:700}
+/* foto: file ada di folder foto/ (foto-01.jpg dst). Kotak abu-abu = belum ada foto */
+.ph{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,#e4e1ea,#e4e1ea 10px,#ebe8f0 10px,#ebe8f0 20px);color:#7a7685;font:600 13px var(--sans);letter-spacing:.08em;text-align:center}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* fade-in */
+.fade{opacity:0;transform:translateY(28px);transition:opacity 1.1s ease,transform 1.1s ease}
+.fade.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+.note{background:#fffdf6;background-image:radial-gradient(rgba(150,120,70,.07) 1px,transparent 1px);background-size:6px 6px;padding:clamp(20px,3vw,34px);box-shadow:0 14px 30px rgba(0,0,0,.18);transform:rotate(-1.5deg);line-height:1.75;font-size:clamp(14px,1.5vw,16.5px);position:relative}
+.note::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:28px;margin-left:-45px;background:rgba(233,169,184,.7);transform:rotate(3deg)}
+.note b{display:block;margin-bottom:10px;font-weight:600}
+
+/* 1 HERO */
+#hero{background:#2a2630;color:#fff;padding:0}
+#hero .bg{position:absolute;inset:0;border-radius:0;font-size:18px}
+#hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,.25))}
+#hero h1{position:absolute;left:clamp(20px,5vw,64px);bottom:clamp(48px,9vh,96px);z-index:2;font:500 clamp(44px,9vw,120px)/.95 var(--serif);max-width:8ch}
+#hero small{position:absolute;left:clamp(20px,5vw,64px);bottom:clamp(20px,4vh,48px);z-index:2;font-size:14px;letter-spacing:.12em}
+#hero .age{position:absolute;right:clamp(16px,5vw,64px);top:50%;transform:translateY(-50%);z-index:2;font-size:clamp(64px,16vw,200px);line-height:1}
+/* 2 GRID (dinding foto miring) */
+#grid{background:#111;padding:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
+#grid .wall{position:absolute;display:grid;gap:14px;transform-origin:center;will-change:transform;
+  /* HP / tablet: 2 kolom, turun ke bawah saat scroll */
+  width:150%;height:270%;left:-25%;top:-85%;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(8,1fr);
+  transform:rotate(-8deg) translateY(-14%);animation:driftY 28s ease-in-out infinite alternate}
+#grid .wall .ph{border-radius:4px;font-size:11px;box-shadow:0 8px 22px rgba(0,0,0,.45);transform:rotate(var(--r,0deg));overflow:hidden}
+#grid .wall .ph img{width:100%;height:100%;object-fit:cover}
+#grid .wall .ph:nth-child(3n){--r:2.5deg}
+#grid .wall .ph:nth-child(3n+1){--r:-2deg}
+#grid .wall .ph:nth-child(4n+2){--r:1deg}
+#grid::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(10,8,14,.55),rgba(10,8,14,.85))}
+@media(min-width:900px){
+  /* DESKTOP: 2 baris memanjang, bergeser ke samping saat scroll */
+  #grid .wall{width:230%;height:150%;left:-10%;top:-25%;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(2,1fr);
+    transform:rotate(-8deg) translateX(2%);animation:driftX 32s ease-in-out infinite alternate}
+}
+@keyframes driftY{to{transform:rotate(-8deg) translateY(14%)}}
+@keyframes driftX{to{transform:rotate(-8deg) translateX(-32%)}}
+@media(prefers-reduced-motion:reduce){#grid .wall{animation:none}}
+#grid h2{position:relative;z-index:2;font:500 clamp(34px,6.5vw,84px)/1.15 var(--serif);padding:0 20px;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+#grid h2 .it{font-size:2.3em;line-height:.8;vertical-align:-.1em}
+/* 3 LEVEL UP */
+#level{background:linear-gradient(#5aa9e6 0%,#9fd0f5 60%,#e6f4ff 100%);color:#fff}
+#level::before,#level::after{content:"";position:absolute;background:#fff;border-radius:50px;opacity:.85;box-shadow:40px -18px 0 8px #fff,90px 0 0 0 #fff;height:46px}
+#level::before{width:120px;top:22%;left:46%}
+#level::after{width:150px;top:58%;left:8%;opacity:.6}
+#level h2{font:500 clamp(30px,5vw,60px) var(--serif);position:relative;z-index:2}
+#level h2 .it{font-size:2.8em;line-height:.8;vertical-align:-.12em;margin-right:8px}
+#level .note{position:absolute;left:clamp(20px,5vw,72px);bottom:clamp(24px,6vh,72px);width:min(460px,88%);color:var(--ink);z-index:3}
+#level .cut{position:absolute;right:clamp(16px,6vw,90px);bottom:0;width:min(34vw,360px);height:min(70vh,520px);border-radius:180px 180px 0 0;z-index:2}
+/* 4 RANK */
+#rank{background:#b9d3e6;background-image:linear-gradient(90deg,transparent 49.6%,rgba(80,110,140,.25) 50%,transparent 50.4%),linear-gradient(#b9d3e6,#a7c6dc)}
+#rank h2{font:500 clamp(28px,4.8vw,58px)/1.1 var(--serif);color:#fff;text-shadow:0 2px 12px rgba(40,80,120,.35);position:relative;z-index:2;text-align:center}
+#rank h2 .it{font-size:2.8em;line-height:.8;vertical-align:-.12em;margin-right:6px}
+#rank .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(24px,6vw,80px);margin-top:48px;position:relative;z-index:2}
+#rank .note{flex:1 1 300px;max-width:430px}
+#rank .stack{position:relative;flex:1 1 300px;max-width:400px;height:420px}
+.pol{position:absolute;width:62%;background:#fff;padding:10px 10px 38px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.pol .ph{aspect-ratio:1;width:100%}
+.pol:nth-child(1){left:0;top:0;transform:rotate(-9deg)}
+.pol:nth-child(2){right:0;top:70px;transform:rotate(7deg)}
+.pol:nth-child(3){left:18%;top:170px;transform:rotate(-2deg)}
+.st{position:absolute;color:#fff;font-size:26px;opacity:.9;z-index:1;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.3;transform:scale(.8) rotate(20deg)}}
+/* 5 FIRST */
+#first{background:#fff;display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,72px);align-items:center}
+#first .txt{flex:1 1 320px}
+#first h2{font:500 clamp(28px,4.6vw,56px)/1.1 var(--serif);margin-bottom:28px}
+#first h2 .it{font-size:2.8em;line-height:.8;vertical-align:-.12em;margin:0 4px}
+#first p{line-height:1.85;max-width:56ch;font-size:clamp(14px,1.5vw,16.5px)}
+#first .booth{flex:1 1 280px;max-width:380px;background:#111;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;transform:rotate(2deg);box-shadow:0 14px 32px rgba(0,0,0,.25)}
+#first .booth .ph{aspect-ratio:3/4;font-size:11px}
+/* 6 LOVE */
+#love{background:#fff;display:flex;flex-wrap:wrap;gap:clamp(24px,6vw,80px);align-items:center;justify-content:center}
+#love .pic{flex:1 1 260px;max-width:340px;aspect-ratio:3/4;position:relative;filter:grayscale(1)}
+#love .pic .ph{width:100%;height:100%}
+#love .pic .n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(80px,14vw,150px);color:#fff;filter:none;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+#love .pic .cap{position:absolute;left:0;right:0;bottom:-28px;text-align:center;font-size:12px;letter-spacing:.1em;color:#555}
+#love .txt{flex:1 1 340px;max-width:560px}
+#love h2{font:italic 700 clamp(44px,7vw,84px)/1 var(--serif);margin-bottom:18px}
+#love p{line-height:1.9;margin-top:16px;font-size:clamp(14px,1.5vw,16.5px)}
+.player{display:flex;align-items:center;gap:14px;background:#f4eff6;border-radius:60px;padding:10px 20px 10px 10px;margin-bottom:10px;width:fit-content;max-width:100%}
+.disc{width:54px;height:54px;flex:none;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle,#e9a9b8 0 14%,#111 15% 30%,#2a2a2a 31% 33%,#111 34% 50%,#2a2a2a 51% 53%,#111 54%);box-shadow:0 3px 10px rgba(0,0,0,.3);animation:spin 4s linear infinite;animation-play-state:paused}
+.player.on .disc{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.player span{font-size:13px;font-weight:600;line-height:1.35}
+.player em{display:block;font-weight:400;font-size:11px;color:#777;font-style:normal}
+/* 7 FOOTER */
+#foot{background:#2a2630;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0}
+#foot .bg{position:absolute;inset:0}
+#foot::after{content:"";position:absolute;inset:0;background:rgba(10,8,14,.58)}
+#foot h2,#foot p{position:relative;z-index:2}
+#foot h2{font:italic 700 clamp(46px,10vw,130px)/1 var(--serif)}
+#foot p{font:500 clamp(18px,3vw,34px) var(--serif);margin-top:14px}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HERO ============ -->
+<section id="hero">
+  <!-- MASUKKAN FOTO HERO (PORTRAIT, FULL-SCREEN) DI SINI: ganti div.ph di bawah dengan <img class="bg" src="foto-hero.jpg" style="object-fit:cover;width:100%;height:100%"> -->
+  <div class="ph bg"><img src="foto/foto-04.jpg" alt="" loading="lazy" style="object-position:38% center"></div>
+  <h1 class="fade">HAPPY BIRTHDAY!</h1>
+  <small class="fade">December 23, 2026</small>
+  <div class="age it fade">15th</div>
+</section>
+
+<!-- ============ 2. GRID FOTO & JUDUL ============ -->
+<section id="grid">
+  <!-- Dinding foto: HP = bergeser ke bawah sendiri, desktop = bergeser ke samping sendiri. Urutan kotak bebas, jumlah tetap 16 -->
+  <div class="wall">
+    <!-- MASUKKAN FOTO 2 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-07.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 3 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-08.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 4 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-02.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 5 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-10.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 6 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-03.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 7 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-14.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 8 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-05.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 9 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-11.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 10 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-06.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 11 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-15.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 12 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-07.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 13 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-09.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 14 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-12.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 15 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-16.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO 16 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-04.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+    <!-- MASUKKAN FOTO 17 DI SINI (ganti isi div ini dengan <img src="fotomu.jpg">) --><div class="ph"><img src="foto/foto-03.jpg" alt="" loading="lazy" style="object-position:30% center"></div>
+  </div>
+  <h2 class="fade">
+    <span class="it">3</span> things you get<br>when you turn <span class="it">15</span>.
+  </h2>
+</section>
+
+<!-- ============ 3. LEVEL UP ERA ============ -->
+<section id="level">
+  <h2 class="fade"><span class="it">3</span>Level Up Era</h2>
+  <div class="note fade">
+    <b>HAPPY 15TH BIRTHDAY RIFANAAA!!</b>
+    Jujur gak kerasa banget tau-tau udah 15 tahun aja. Di umur yang baru ini semoga makin dewasa, makin keren, dan makin jago nge-handle semua drama kehidupan yaa. Semangat terus buat semua hal yang lagi kamu kejar, aku yakin kamu pasti bisa ngelewatin semuanya dengan gampang!
+  </div>
+  <!-- MASUKKAN FOTO CUTOUT (ORANG TANPA BACKGROUND, FORMAT PNG TRANSPARAN) DI SINI -->
+  <div class="ph cut fade">[FOTO 18 – CUTOUT]</div>
+</section>
+
+<!-- ============ 4. RANK 2 ============ -->
+<section id="rank">
+  <span class="st" style="top:8%;left:6%">✦</span><span class="st" style="top:18%;right:8%;animation-delay:.7s">✧</span>
+  <span class="st" style="bottom:12%;left:12%;animation-delay:1.4s">✧</span><span class="st" style="bottom:20%;right:5%;animation-delay:2s">✦</span>
+  <h2 class="fade"><span class="it">2</span> Rank 2 Through Consistency!!</h2>
+  <div class="row">
+    <div class="note fade">
+      <b>JUJUR INI KEREN BANGET SIH!!</b>
+      Selamat yaa buat semua pencapaian kamu sejauh ini. Aku selalu kagum sama kamu yang gak pernah setengah-setengah kalo lagi ngelakuin sesuatu. Pertahanin terus yaa vibes positif dan kerja kerasnya, pokoknya proud of you banget deh!
+    </div>
+    <div class="stack fade">
+      <!-- MASUKKAN FOTO POLAROID 1 DI SINI --><div class="pol"><div class="ph"><img src="foto/foto-03.jpg" alt="" loading="lazy" style="object-position:12% center"></div></div>
+      <!-- MASUKKAN FOTO POLAROID 2 DI SINI --><div class="pol"><div class="ph"><img src="foto/foto-02.jpg" alt="" loading="lazy" style="object-position:12% center"></div></div>
+      <!-- MASUKKAN FOTO POLAROID 3 DI SINI --><div class="pol"><div class="ph"><img src="foto/foto-06.jpg" alt="" loading="lazy" style="object-position:12% center"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. THE FIRST 1 ============ -->
+<section id="first">
+  <div class="txt fade">
+    <h2>The first <span class="it">1</span> on my mind</h2>
+    <p>HAHAHA YESS ALWAYS YOU!! Makasih banyak ya udah jadi orang yang selalu ada dan bikin hari-hari terasa jauh lebih seru. Jujur aku beruntung banget bisa kenal kamu. Maaf ya kalo kadang aku suka nyebelin atau bikin bete, tapi di umur kamu yang ke-15 ini aku pengen liat kamu bahagia terus. Jangan pernah ngerasa minder sama pencapaian orang lain, karena kamu punya versi keren kamu sendiri. Keep shining yaa!</p>
+  </div>
+  <div class="booth fade">
+    <!-- MASUKKAN FOTO PHOTO BOOTH 1 DI SINI --><div class="ph"><img src="foto/foto-15.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO PHOTO BOOTH 2 DI SINI --><div class="ph"><img src="foto/foto-12.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO PHOTO BOOTH 3 DI SINI --><div class="ph"><img src="foto/foto-10.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO PHOTO BOOTH 4 DI SINI --><div class="ph"><img src="foto/foto-08.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO PHOTO BOOTH 5 DI SINI --><div class="ph"><img src="foto/foto-11.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <!-- MASUKKAN FOTO PHOTO BOOTH 6 DI SINI --><div class="ph"><img src="foto/foto-16.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+  </div>
+</section>
+
+<!-- ============ 6. SURAT PENUTUP + LAGU ============ -->
+<section id="love">
+  <div class="pic fade">
+    <!-- MASUKKAN FOTO VERTIKAL (akan otomatis hitam-putih) DI SINI -->
+    <div class="ph"><img src="foto/foto-14.jpg" alt="" loading="lazy" style="object-position:50% center"></div>
+    <div class="n it">15</div>
+    <div class="cap">rifana putri ariba</div>
+  </div>
+  <div class="txt fade">
+    <h2>to love</h2>
+    <div class="player" id="player">
+      <button class="disc" id="playBtn" aria-label="Play / Pause lagu"></button>
+      <span>Now Playing: Sal Priadi - Amin Paling Serius<em>Sal Priadi &amp; Nadin Amizah · klik piringan untuk play/pause</em></span>
+    </div>
+    <!-- MASUKKAN LINK / FILE MP3 LAGU DI ATRIBUT src DI BAWAH, contoh: src="amin-paling-serius.mp3" -->
+    <audio id="song" src="" loop preload="auto"></audio>
+    <p>another year older, another chapter to begin. semoga di usia yang baru ini, hidup memperlakukanmu dengan lebih lembut. semoga segala hal yang sedang kamu perjuangkan menemukan jalannya, dan segala doa yang belum sempat terjawab perlahan menemukan muaranya.</p>
+    <p>doa-doa terbaik dan paling serius dariku, untukmu. semoga semesta berkenan mengamini segala hal baik yang bahkan belum sempat kamu lafalkan. semoga bahagiamu tidak sekadar menjadi persinggahan, melainkan sesuatu yang menetap.</p>
+    <p>selamat ulang tahun yang ke-15 ya, Rifana Putri Ariba. semoga semua hal baik selalu berpihak ke kamu hari ini, besok, dan seterusnya.</p>
+  </div>
+</section>
+
+<!-- ============ 7. FOOTER ============ -->
+<section id="foot">
+  <!-- MASUKKAN FOTO FOOTER (FULL-SCREEN) DI SINI -->
+  <div class="ph bg"><img src="foto/foto-07.jpg" alt="" loading="lazy" style="object-position:40% center"></div>
+  <h2 class="fade">Happy Birthday!!</h2>
+  <p class="fade">Rifana Putri Ariba</p>
+</section>
+
+<script>
+// Fade-in saat scroll
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.fade').forEach(function(el){io.observe(el)});
+
+// Musik: coba putar otomatis saat Section 6 terlihat (browser bisa memblokir; klik piringan jika tidak bunyi)
+var song=document.getElementById('song'),btn=document.getElementById('playBtn'),pl=document.getElementById('player'),tried=false;
+function sync(){pl.classList.toggle('on',!song.paused)}
+btn.addEventListener('click',function(){if(!song.getAttribute('src'))return;song.paused?song.play().then(sync):(song.pause(),sync())});
+new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting&&!tried&&song.getAttribute('src')){tried=true;song.play().then(sync).catch(function(){})}
+  if(!e.isIntersecting&&!song.paused){song.pause();sync()}
+  if(e.isIntersecting&&tried&&song.paused&&!song.dataset.manual){song.play().then(sync).catch(function(){})}
+})},{threshold:.4}).observe(document.getElementById('love'));
+btn.addEventListener('click',function(){song.dataset.manual=1});
+</script>
+</body>
+</html>
